@@ -16,8 +16,8 @@ export default function Login() {
     setCredentials({ userName: values.email, password: values.password });
 
     console.log("Formulario válido");
-    console.log("Usuario:", values.email);
-    console.log("Contraseña:", values.password);
+    console.log("Usuario:", credentials.userName);
+    console.log("Contraseña:", credentials.password);
   };
 
   return (
