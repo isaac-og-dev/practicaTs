@@ -1,18 +1,25 @@
-import EventCard from "../components/cards/EventCard";
+import { useNavigate } from "react-router-dom";
+import BtnBlueComponent from "../components/general/BtnBlueComponent";
 
-export default function LandingPage (){
+export default function LandingPage() {
+    const navigate = useNavigate();
 
-    let numbers: string = [
-        1,2,3,4,5,6,7,8
-    ]
-
-    return(
+    return (
         <div className="flex min-h-screen justify-center items-center">
-            
-            <h2>Prueba de typeScript</h2>
-            <div className="grid grid-4">
-                <EventCard value={number}/>
+
+            <div className="w-1/5">
+                <BtnBlueComponent
+                    onClick={()=> navigate("/login")}
+                    text="Iniciar sesión"
+                />
+
+                <BtnBlueComponent
+                    onClick={() => navigate("/supplies/register")}
+                    text="Formulario"
+                />
             </div>
+
+
         </div>
     );
 }
