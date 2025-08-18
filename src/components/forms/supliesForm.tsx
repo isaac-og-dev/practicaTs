@@ -12,16 +12,21 @@ type suppliesValuesForm = {
     formula: string
 }
 
-export default function SupliesForm() {
+type registerProps = {
+    onRegister: (values: suppliesValuesForm) => void;
+}
+
+export default function SupliesForm({ onRegister }: registerProps) {
 
     const { formData,
+        setFormData,
         errors,
         handleChange,
         validateForm } = useForm({
             name: "",
             category: "",
             type: "",
-            filling: "",
+            filing: "",
             concentration: "",
             formula: ""
         }, SupliesFormSchema);
@@ -31,15 +36,26 @@ export default function SupliesForm() {
 
         const isvalid = await validateForm();
         if (!isvalid) return;
-        console.log();
+        onRegister(formData);
+        resetForm();
+    }
+
+    function resetForm() {
+        setFormData({
+            name: "",
+            category: "",
+            type: "",
+            filing: "",
+            concentration: "",
+            formula: ""
+        })
     }
 
     return (
         <div className="border rounded px-2 py-4">
-            <form onSubmit={registerSupplies}>
-                
+
                 <TextComponent
-                    name="productName"
+                    name="name"
                     value={formData.name}
                     label="Nombre del suministro"
                     onChange={handleChange}
@@ -63,13 +79,13 @@ export default function SupliesForm() {
                 />
 
                 <TextComponent
-                    name="filling"
-                    value={formData.filling}
+                    name="filing"
+                    value={formData.filing}
                     label="Presentación del suministro"
                     onChange={handleChange}
-                    error={errors.filling}
+                    error={errors.filing}
                 />
-                
+
                 <TextComponent
                     name="concentration"
                     value={formData.concentration}
@@ -87,11 +103,16 @@ export default function SupliesForm() {
                 />
 
                 <BtnBlueComponent
-                    type="submit"
-                    text="Agregar suministro"
+                    onClick={() => resetForm()}
+                    text="Cancelar"
                 />
 
-            </form>
+                <BtnBlueComponent
+                    onClick={registerSupplies}
+                    text="Agregar suministro"
+
+                />
+
         </div>
     );
 }
