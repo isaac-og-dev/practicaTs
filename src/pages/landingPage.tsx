@@ -17,6 +17,11 @@ export default function LandingPage() {
                     onClick={() => navigate("/supplies/register")}
                     text="Formulario"
                 />
+
+                <BtnBlueComponent
+                    onClick={() => navigate("/supplies")}
+                    text="Lista de suministros"
+                />
             </div>
 
 
