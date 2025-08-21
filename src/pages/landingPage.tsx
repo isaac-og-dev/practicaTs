@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import BtnBlueComponent from "../components/general/BtnBlueComponent";
+import BtnBlueComponent from "../components/general/BtnComponent";
 
 export default function LandingPage() {
     const navigate = useNavigate();

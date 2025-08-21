@@ -3,7 +3,7 @@ import { User } from "react-feather";
 import { loginSchema } from "../../schemas/loginSchema";
 import TextComponent from "../general/TextComponent";
 import PasswordComponent from "../general/PasswordComponent";
-import BtnBlueComponent from "../general/BtnBlueComponent";
+import BtnBlueComponent from "../general/BtnComponent";
 
 type LoginFormValues = {
     email: string;
