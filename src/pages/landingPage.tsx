@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import BtnBlueComponent from "../components/general/BtnComponent";
+import { BtnBlueComponent } from "../components/general/BtnComponent";
 
 export default function LandingPage() {
     const navigate = useNavigate();
@@ -11,11 +11,6 @@ export default function LandingPage() {
                 <BtnBlueComponent
                     onClick={()=> navigate("/login")}
                     text="Iniciar sesión"
-                />
-
-                <BtnBlueComponent
-                    onClick={() => navigate("/supplies/register")}
-                    text="Formulario"
                 />
 
                 <BtnBlueComponent

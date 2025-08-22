@@ -1,9 +1,9 @@
-export type suppliesValuesForm = {
-    id?: string,
+export type suppliesValues = {
+    id?: number,
     name: string,
     category: string,
     type: string,
     filing: string,
     concentration: string,
-    formula: string
+    form: string
 }

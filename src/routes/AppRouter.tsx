@@ -4,7 +4,6 @@ import PrivateRoute from "./PrivateRoute";
 
 import Login from "../pages/login";
 import LandingPage from "../pages/landingPage";
-import RegisterSuplies from "../pages/suplies/RegisterSuplies";
 import SuppliesList  from "../pages/supplies";
 
 const AppRoutes = () => {
@@ -19,7 +18,6 @@ const AppRoutes = () => {
 
         {/* Rutas privadas */}
         <Route element={<PrivateRoute />}>
-          <Route path="/supplies/register" element={<RegisterSuplies />} />
           <Route path="/supplies" element={<SuppliesList/>}/>
         </Route>
       </Routes>
